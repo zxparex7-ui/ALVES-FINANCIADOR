@@ -1,0 +1,18 @@
+ALVES FINANCIADOR — PROJETO ANDROID
+
+Este é um projeto Android nativo (Kotlin + WebView local), com ícone de inicialização baseado na logo fornecida e o painel financeiro embarcado no aplicativo. Depois de instalado, ele abre sem depender do Chrome ou de conexão com a internet.
+
+IMPORTANTE: este pacote é o PROJETO-FONTE, não um APK compilado. O ambiente desta conversa não tem Android SDK/Gradle instalado para compilar e assinar o APK diretamente.
+
+Como gerar o APK automaticamente:
+1. Crie/entre em uma conta GitHub.
+2. Crie um repositório novo chamado AlvesFinanciador.
+3. Envie o conteúdo desta pasta para a raiz do repositório.
+4. Abra a aba Actions e execute "Build ALVES FINANCIADOR APK" (ou aguarde o workflow terminar).
+5. Abra a execução concluída e baixe o artefato "ALVES-FINANCIADOR-APK".
+6. Extraia o arquivo app-debug.apk e instale no Android. Se solicitado, permita instalar apps desta fonte.
+
+O app usa armazenamento local do WebView. Não limpe os dados do aplicativo se quiser preservar os registros.
+Identificador Android: br.com.alvesfinanciador
+Nome: ALVES FINANCIADOR
+Versão: 1.0
