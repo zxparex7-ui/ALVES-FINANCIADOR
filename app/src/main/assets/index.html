@@ -1,156 +1,29 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#050b18">
-<meta name="description" content="ALVES FINANCIADOR — controle seus ganhos, metas e despesas.">
-<link rel="manifest" href="manifest.webmanifest">
-<link rel="icon" href="icons/icon-192.png">
-<link rel="apple-touch-icon" href="icons/icon-192.png">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#050b18">
 <title>ALVES FINANCIADOR</title>
 <style>
-:root{color-scheme:dark;--bg:#050b18;--panel:#0d1729;--panel2:#111f35;--line:#1c3555;--txt:#f1f6ff;--muted:#93a9c5;--blue:#087bff;--cyan:#12c8ff;--green:#36dda1;--gold:#f3c969;--red:#ff737d}
-*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 50% -20%,#102d55 0%,#071224 42%,var(--bg) 78%);color:var(--txt);font:15px/1.45 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;min-height:100vh}
-.wrap{max-width:940px;margin:auto;padding:env(safe-area-inset-top) 14px calc(28px + env(safe-area-inset-bottom))}
-header{display:flex;align-items:center;gap:13px;padding:18px 2px 15px}
-.logo{width:62px;height:62px;border-radius:17px;object-fit:cover;border:1px solid #168bff;box-shadow:0 0 22px #087bff66}
-h1{font-size:20px;line-height:1.1;letter-spacing:.5px;margin:0;font-weight:900}.tag{font-size:10px;letter-spacing:2px;color:var(--cyan);font-weight:800;margin-top:6px}
-.header-right{margin-left:auto;text-align:right;color:var(--muted);font-size:11px}
-.hero{border:1px solid #1264b6;border-radius:22px;padding:19px;background:linear-gradient(135deg,#0c2445,#0a182b 75%);box-shadow:0 12px 34px #00112c99;position:relative;overflow:hidden}
-.hero:after{content:"";position:absolute;width:180px;height:180px;border:1px solid #087bff44;border-radius:50%;right:-65px;top:-75px;box-shadow:0 0 45px #087bff22}
-.eyebrow{font-size:11px;color:#a9c8ed;font-weight:750;letter-spacing:1px;text-transform:uppercase}.hero-num{font-size:34px;font-weight:900;letter-spacing:-1px;margin:4px 0}
-.bar{height:10px;background:#ffffff18;border-radius:20px;overflow:hidden;margin:13px 0 7px}.bar>i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--blue),var(--cyan),var(--green));border-radius:20px;transition:width .2s}
-.between{display:flex;justify-content:space-between;gap:10px;color:#b6c9e2;font-size:11px}
-.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:12px}.card{background:linear-gradient(145deg,#101e33,#0b1526);border:1px solid var(--line);border-radius:17px;padding:14px;min-width:0}
-.klabel{font-size:11px;color:var(--muted)}.value{font-size:21px;font-weight:850;margin-top:4px;overflow-wrap:anywhere}.vgreen{color:var(--green)}.vblue{color:#62b6ff}.vgold{color:var(--gold)}
-.section{display:flex;justify-content:space-between;align-items:end;margin:23px 2px 10px;gap:10px}.section h2{font-size:16px;margin:0}.section p{font-size:11px;color:var(--muted);margin:3px 0 0}
-.tabs{display:flex;gap:7px;overflow:auto;padding:2px 0 12px;scrollbar-width:none}.tabs button{flex:1;white-space:nowrap;background:#0c192b;color:#9fb4d0;border:1px solid var(--line);padding:10px 12px;border-radius:12px;font-weight:750}.tabs button.active{color:white;border-color:#168cff;background:linear-gradient(120deg,#0755a8,#073a6e);box-shadow:0 0 16px #087bff33}
-.panel{background:#0b1627;border:1px solid var(--line);border-radius:18px;padding:14px}
-.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.field label{display:block;color:var(--muted);font-size:11px;margin:0 0 5px}.field input{width:100%;min-width:0;background:#071120;color:white;border:1px solid #28415f;border-radius:10px;padding:11px;font:inherit;outline:none}.field input:focus{border-color:var(--cyan)}
-button{cursor:pointer;font:inherit}.primary{background:linear-gradient(100deg,#087bff,#08aeea);border:0;color:white;padding:11px 15px;border-radius:11px;font-weight:850}.secondary{background:#14243a;border:1px solid #294563;color:#dceaff;padding:10px 13px;border-radius:11px;font-weight:700}.danger{background:#351a28;border:1px solid #713448;color:#ffc1ca;padding:9px 12px;border-radius:10px}
-.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
-.days{display:grid;gap:8px}.day{display:grid;grid-template-columns:46px 1fr 104px 26px;gap:7px;align-items:center;padding:9px;background:#0e1b2e;border:1px solid #1d3551;border-radius:12px}.day.done{border-color:#1b795c;background:#0c241f}.daydate{font-weight:900;color:#dcecff}.daydate small{display:block;color:#7f9bbd;font-size:9px;font-weight:600}.day input[type=number]{width:100%;min-width:0;background:#071120;color:white;border:1px solid #28415f;border-radius:8px;padding:8px;font:inherit;font-size:13px}.day input[type=checkbox]{width:19px;height:19px;accent-color:#28d99a}
-.rowline{display:flex;justify-content:space-between;gap:10px;padding:12px 0;border-bottom:1px solid #1c304a}.rowline:last-child{border:0}.rowline strong{font-size:13px}.rowline small{display:block;color:var(--muted);font-size:11px}
-.notice{background:#101f34;border:1px solid #274365;border-radius:12px;padding:11px;color:#afc4df;font-size:11px;margin-top:11px}
-.hidden{display:none!important}.small{font-size:11px;color:var(--muted)}.foot{text-align:center;color:#637d9f;font-size:10px;padding:20px 0 5px}
-@media(min-width:680px){.cards{grid-template-columns:repeat(4,minmax(0,1fr))}.hero{padding:23px}.hero-num{font-size:40px}}
-@media(max-width:380px){.day{grid-template-columns:38px 1fr 84px 23px;padding:7px;gap:5px}.day input[type=number]{padding:7px 4px;font-size:12px}.value{font-size:19px}}
-</style>
-</head>
-<body>
-<div class="wrap">
-<header>
-<img class="logo" src="icons/icon-192.png" alt="Logo ALVES">
-<div><h1>ALVES FINANCIADOR</h1><div class="tag">PLANEJE • ORGANIZE • REALIZE</div></div>
-<div class="header-right">NOVEMBRO<br><strong style="color:#dcecff">2026</strong></div>
-</header>
-
-<section class="hero">
-<div class="eyebrow">Progresso das suas contas</div>
-<div class="hero-num" id="heroEarned">R$ 0,00</div>
-<div class="bar"><i id="heroBar"></i></div>
-<div class="between"><span id="heroCaption">R$ 0,00 de R$ 1.650,00</span><b id="heroPct">0%</b></div>
-</section>
-
-<div class="cards">
-<div class="card"><div class="klabel">Total das contas</div><div class="value" id="totalGoal">R$ 1.650,00</div></div>
-<div class="card"><div class="klabel">Ganhos registrados</div><div class="value vgreen" id="earned">R$ 0,00</div></div>
-<div class="card"><div class="klabel">Falta alcançar</div><div class="value vgold" id="remaining">R$ 1.650,00</div></div>
-<div class="card"><div class="klabel">Dias concluídos</div><div class="value vblue" id="doneCount">0 / 24</div></div>
-</div>
-
-<div class="section"><div><h2>Seu painel</h2><p>Escolha o que deseja acompanhar.</p></div></div>
-<nav class="tabs">
-<button class="active" data-tab="overview">Resumo</button><button data-tab="days">Entregas</button><button data-tab="goals">Metas</button><button data-tab="expenses">Contas</button>
-</nav>
-
-<section id="tab-overview">
-<div class="cards" style="margin-top:0">
-<div class="card"><div class="klabel">Média por noite concluída</div><div class="value" id="average">R$ 0,00</div></div>
-<div class="card"><div class="klabel">Meta diária</div><div class="value vblue" id="dailyView">R$ 70,00</div></div>
-<div class="card"><div class="klabel">Meta da maquiagem</div><div class="value vgold" id="makeupView">R$ 150,00</div></div>
-<div class="card"><div class="klabel">Missões e bônus</div><div class="value vgreen" id="missionView">R$ 50,00</div></div>
-</div>
-<div class="notice">Registre o valor líquido das entregas, já descontando a gasolina. O bônus só entra na soma quando você confirmar que recebeu.</div>
-</section>
-
-<section id="tab-days" class="hidden">
-<div class="panel">
-<div class="small" style="margin-bottom:10px">Informe quanto sobrou das entregas em cada dia e marque quando concluir a meta.</div>
-<div class="days" id="daysList"></div>
-</div>
-</section>
-
-<section id="tab-goals" class="hidden">
-<div class="panel">
-<div class="grid2">
-<div class="field"><label>Meta por noite (R$)</label><input id="dailyGoal" type="number" min="0" step=".01"></div>
-<div class="field"><label>Missão / bônus recebido (R$)</label><input id="mission" type="number" min="0" step=".01"></div>
-<div class="field"><label>Meta para maquiagem (R$)</label><input id="makeup" type="number" min="0" step=".01"></div>
-<div class="field"><label>Gasolina prevista (R$)</label><input id="fuel" type="number" min="0" step=".01"></div>
-</div>
-<div class="actions"><button class="primary" id="saveGoals">Salvar metas</button></div>
-<div class="notice">A meta da maquiagem é separada das contas essenciais. Primeiro garanta a dívida e as despesas de casa.</div>
-</div>
-</section>
-
-<section id="tab-expenses" class="hidden">
-<div class="panel">
-<div class="grid2">
-<div class="field"><label>Dívida (R$)</label><input id="debt" type="number" min="0" step=".01"></div>
-<div class="field"><label>Despesas de casa (R$)</label><input id="home" type="number" min="0" step=".01"></div>
-</div>
-<div class="actions"><button class="primary" id="saveBills">Salvar contas</button></div>
-<div class="rowline"><div><strong>Dívida</strong><small>Prioridade de pagamento</small></div><b id="debtText">R$ 850,00</b></div>
-<div class="rowline"><div><strong>Despesas de casa</strong><small>Compromissos do mês</small></div><b id="homeText">R$ 800,00</b></div>
-<div class="rowline"><div><strong>Total necessário</strong><small>Dívida + casa</small></div><b id="totalText">R$ 1.650,00</b></div>
-<div class="rowline"><div><strong>Saldo acima das contas</strong><small>Estimativa com os ganhos registrados</small></div><b class="vgreen" id="surplus">R$ 0,00</b></div>
-</div>
-</section>
-
-<div class="foot">ALVES FINANCIADOR · SEU DINHEIRO SOB CONTROLE<br>Seus dados ficam salvos neste aparelho.</div>
-</div>
+:root{color-scheme:dark;--bg:#050b18;--panel:#0c1728;--panel2:#10213a;--line:#1b3555;--txt:#f2f7ff;--muted:#91a8c5;--blue:#087bff;--cyan:#12c8ff;--green:#39dda2;--gold:#f4c96b;--red:#ff7180}*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 50% -15%,#12345e 0,#071426 42%,var(--bg) 78%);color:var(--txt);font:14px/1.45 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;min-height:100vh}.wrap{max-width:960px;margin:auto;padding:env(safe-area-inset-top) 14px calc(28px + env(safe-area-inset-bottom))}header{display:flex;align-items:center;gap:12px;padding:16px 2px}.logo{width:58px;height:58px;border-radius:16px;object-fit:cover;border:1px solid #168bff;box-shadow:0 0 22px #087bff66}h1{font-size:18px;line-height:1.1;margin:0;font-weight:950;letter-spacing:.4px}.tag{font-size:9px;letter-spacing:1.8px;color:var(--cyan);font-weight:850;margin-top:6px}.month{margin-left:auto;text-align:right;color:var(--muted);font-size:10px}.month strong{display:block;color:#eaf4ff;font-size:12px}.hero{border:1px solid #1264b6;border-radius:21px;padding:18px;background:linear-gradient(135deg,#0d2a50,#0a182b 75%);box-shadow:0 12px 34px #00112c99}.eyebrow,.klabel{font-size:10px;color:#a8c2e2;letter-spacing:.5px}.balance{font-size:32px;font-weight:950;letter-spacing:-1px;margin:4px 0}.sub{font-size:11px;color:#a9bfd9}.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin-top:11px}.card,.panel{background:linear-gradient(145deg,#101f34,#0a1525);border:1px solid var(--line);border-radius:16px;padding:13px;min-width:0}.value{font-size:20px;font-weight:900;margin-top:4px;overflow-wrap:anywhere}.green{color:var(--green)}.red{color:var(--red)}.blue{color:#68baff}.gold{color:var(--gold)}.tabs{display:flex;gap:7px;overflow:auto;padding:15px 0 10px;scrollbar-width:none}.tabs button{flex:0 0 auto;background:#0c192b;color:#9fb4d0;border:1px solid var(--line);padding:10px 13px;border-radius:11px;font-weight:800}.tabs button.active{color:white;border-color:#168cff;background:linear-gradient(120deg,#0755a8,#073a6e)}.section{display:flex;align-items:end;justify-content:space-between;gap:10px;margin:16px 2px 9px}.section h2{font-size:15px;margin:0}.section p{font-size:10px;color:var(--muted);margin:3px 0 0}.field label{display:block;color:var(--muted);font-size:10px;margin:0 0 5px}.field input,.field select{width:100%;background:#071120;color:white;border:1px solid #28415f;border-radius:10px;padding:11px;font:inherit;outline:none;min-width:0}.field input:focus,.field select:focus{border-color:var(--cyan)}.formgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.full{grid-column:1/-1}button{cursor:pointer;font:inherit}.primary{background:linear-gradient(100deg,#087bff,#08aeea);border:0;color:white;padding:11px 15px;border-radius:11px;font-weight:850}.secondary{background:#14243a;border:1px solid #294563;color:#dceaff;padding:10px 13px;border-radius:11px;font-weight:750}.danger{background:#351a28;border:1px solid #713448;color:#ffc1ca;padding:8px 10px;border-radius:9px;font-size:11px}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.list{display:grid;gap:8px;margin-top:10px}.item{display:flex;align-items:center;gap:10px;padding:11px;background:#0d1b2e;border:1px solid #1d3551;border-radius:12px}.item-main{min-width:0;flex:1}.item-main strong{display:block;font-size:12px;overflow-wrap:anywhere}.item-main small{display:block;color:var(--muted);font-size:10px}.item-amount{font-weight:900;white-space:nowrap;font-size:12px}.empty{padding:18px;text-align:center;color:var(--muted);font-size:11px;border:1px dashed #294563;border-radius:12px;margin-top:10px}.progress{height:8px;background:#ffffff18;border-radius:20px;overflow:hidden;margin:9px 0}.progress i{display:block;height:100%;background:linear-gradient(90deg,var(--blue),var(--cyan),var(--green));border-radius:20%}.hidden{display:none!important}.notice{background:#101f34;border:1px solid #274365;border-radius:11px;padding:10px;color:#afc4df;font-size:10px;margin-top:10px}.foot{text-align:center;color:#637d9f;font-size:9px;padding:22px 0 5px}.split{display:flex;justify-content:space-between;gap:10px;align-items:center}.mini{font-size:10px;color:var(--muted)}@media(min-width:680px){.cards{grid-template-columns:repeat(4,minmax(0,1fr))}.balance{font-size:38px}}
+</style></head>
+<body><div class="wrap">
+<header><img class="logo" src="alves_financiador_logo.png" alt="ALVES FINANCIADOR"><div><h1>ALVES FINANCIADOR</h1><div class="tag">PLANEJE • ORGANIZE • REALIZE</div></div><div class="month" id="today"></div></header>
+<section class="hero"><div class="eyebrow">SALDO DO MÊS</div><div class="balance" id="balance">R$ 0,00</div><div class="sub" id="balanceHint">Receitas menos despesas registradas</div><div class="progress"><i id="budgetBar" style="width:0%"></i></div><div class="split mini"><span id="budgetHint">Nenhuma receita ou despesa registrada</span><b id="budgetPct">0%</b></div></section>
+<div class="cards"><div class="card"><div class="klabel">RECEITAS</div><div class="value green" id="incomeTotal">R$ 0,00</div></div><div class="card"><div class="klabel">DESPESAS</div><div class="value red" id="expenseTotal">R$ 0,00</div></div><div class="card"><div class="klabel">DÍVIDAS EM ABERTO</div><div class="value gold" id="debtTotal">R$ 0,00</div></div><div class="card"><div class="klabel">METAS ATIVAS</div><div class="value blue" id="goalCount">0</div></div></div>
+<nav class="tabs"><button class="active" data-tab="home">Visão geral</button><button data-tab="moves">Lançamentos</button><button data-tab="debts">Dívidas</button><button data-tab="goals">Metas</button><button data-tab="backup">Backup</button></nav>
+<section id="tab-home"><div class="section"><div><h2>Resumo financeiro</h2><p>Acompanhe o que entra, sai e o que falta conquistar.</p></div></div><div class="panel"><div class="split"><b>Últimos lançamentos</b><span class="mini" id="moveCount">0 registros</span></div><div id="recentMoves" class="list"></div></div><div class="notice">Dica: registre os ganhos líquidos das entregas e serviços. Assim você acompanha o dinheiro que realmente sobra.</div></section>
+<section id="tab-moves" class="hidden"><div class="section"><div><h2>Novo lançamento</h2><p>Registre qualquer entrada ou saída.</p></div></div><div class="panel"><div class="formgrid"><div class="field"><label>Tipo</label><select id="moveType"><option value="income">Receita</option><option value="expense">Despesa</option></select></div><div class="field"><label>Valor (R$)</label><input id="moveAmount" type="number" min="0.01" step="0.01" placeholder="0,00"></div><div class="field"><label>Descrição</label><input id="moveDesc" maxlength="60" placeholder="Ex.: Entregas, gasolina"></div><div class="field"><label>Data</label><input id="moveDate" type="date"></div></div><div class="actions"><button class="primary" id="addMove">Adicionar lançamento</button></div></div><div class="section"><div><h2>Histórico</h2><p>Toque em excluir para remover um registro.</p></div></div><div id="allMoves" class="list"></div></section>
+<section id="tab-debts" class="hidden"><div class="section"><div><h2>Controle de dívidas</h2><p>Cadastre dívidas e acompanhe os pagamentos.</p></div></div><div class="panel"><div class="formgrid"><div class="field"><label>Nome da dívida</label><input id="debtName" maxlength="50" placeholder="Ex.: Cartão, empréstimo"></div><div class="field"><label>Valor total (R$)</label><input id="debtAmount" type="number" min="0.01" step="0.01" placeholder="0,00"></div><div class="field"><label>Vencimento</label><input id="debtDue" type="date"></div><div class="field"><label>Juros ao mês (%) (opcional)</label><input id="debtRate" type="number" min="0" step="0.01" placeholder="0"></div></div><div class="actions"><button class="primary" id="addDebt">Cadastrar dívida</button></div></div><div id="debtList" class="list"></div><div class="notice">Os pagamentos são registrados no histórico como despesas, para manter o saldo financeiro atualizado.</div></section>
+<section id="tab-goals" class="hidden"><div class="section"><div><h2>Metas financeiras</h2><p>Defina objetivos e acompanhe seu progresso.</p></div></div><div class="panel"><div class="formgrid"><div class="field"><label>Nome da meta</label><input id="goalName" maxlength="50" placeholder="Ex.: Quitar cartão"></div><div class="field"><label>Valor desejado (R$)</label><input id="goalAmount" type="number" min="0.01" step="0.01" placeholder="0,00"></div></div><div class="actions"><button class="primary" id="addGoal">Criar meta</button></div></div><div id="goalList" class="list"></div></section>
+<section id="tab-backup" class="hidden"><div class="section"><div><h2>Segurança dos dados</h2><p>Faça uma cópia para não perder seus registros.</p></div></div><div class="panel"><b>Backup e restauração</b><p class="mini">Exporte seus lançamentos, dívidas e metas em um arquivo JSON. Guarde esse arquivo em local seguro. Para recuperar, selecione um backup criado pelo ALVES FINANCIADOR.</p><div class="actions"><button class="primary" id="exportBtn">Exportar backup</button><button class="secondary" id="importBtn">Importar backup</button><input class="hidden" id="importFile" type="file" accept="application/json"></div><div class="notice">Os dados ficam armazenados localmente neste aparelho. O backup é importante antes de trocar de celular ou reinstalar o aplicativo.</div></div></section>
+<div class="foot">ALVES FINANCIADOR · SEU DINHEIRO SOB CONTROLE<br>Versão 2.0 · Dados armazenados neste aparelho</div></div>
 <script>
-const $=id=>document.getElementById(id);
-const defaults={dailyGoal:70,debt:850,home:800,mission:0,makeup:150,fuel:0};
-let data={goals:{...defaults},days:{}};
-try{const s=JSON.parse(localStorage.getItem('alvesFinanciador'));if(s)data={...data,...s,goals:{...defaults,...(s.goals||{})}}}catch(e){}
-const fmt=n=>(+n||0).toLocaleString('pt-BR',{style:'currency',currency:'BRL'});
-const save=()=>localStorage.setItem('alvesFinanciador',JSON.stringify(data));
-const daysOfWeek=['DOM','SEG','TER','QUA','QUI','SEX','SÁB'];
-function drawDays(){
- const host=$('daysList');host.innerHTML='';
- for(let d=7;d<=30;d++){
-  const x=data.days[d]||{value:'',done:false};const dt=new Date(2026,10,d);
-  const row=document.createElement('div');row.className='day'+(x.done?' done':'');
-  const date=document.createElement('div');date.className='daydate';date.innerHTML=String(d).padStart(2,'0')+'<small>'+daysOfWeek[dt.getDay()]+'</small>';
-  const label=document.createElement('div');label.className='small';label.textContent=dt.getDay()===6?'Sábado · a partir das 15h':'Entregas';
-  const val=document.createElement('input');val.type='number';val.min='0';val.step='.01';val.placeholder='R$ 0';val.value=x.value;val.setAttribute('aria-label','Ganho líquido dia '+d);
-  val.addEventListener('input',()=>{data.days[d]={...data.days[d],value:val.value};save();render()});
-  const check=document.createElement('input');check.type='checkbox';check.checked=!!x.done;check.setAttribute('aria-label','Meta concluída dia '+d);
-  check.addEventListener('change',()=>{data.days[d]={...data.days[d],value:val.value,done:check.checked};save();row.classList.toggle('done',check.checked);render()});
-  row.append(date,label,val,check);host.append(row);
- }
-}
-function render(){
- const g=data.goals, arr=Object.values(data.days),delivery=arr.reduce((s,x)=>s+(+x.value||0),0),mission=+g.mission||0;
- const total=(+g.debt||0)+(+g.home||0),earned=delivery+mission,done=arr.filter(x=>x.done).length;
- const pct=total?Math.min(100,earned/total*100):100;
- $('heroEarned').textContent=fmt(earned);$('heroBar').style.width=pct+'%';$('heroCaption').textContent=fmt(earned)+' de '+fmt(total);$('heroPct').textContent=Math.round(pct)+'%';
- $('totalGoal').textContent=fmt(total);$('earned').textContent=fmt(earned);$('remaining').textContent=fmt(Math.max(0,total-earned));$('doneCount').textContent=done+' / 24';
- $('average').textContent=fmt(done?delivery/done:0);$('dailyView').textContent=fmt(g.dailyGoal);$('makeupView').textContent=fmt(g.makeup);$('missionView').textContent=fmt(g.mission);
- $('debtText').textContent=fmt(g.debt);$('homeText').textContent=fmt(g.home);$('totalText').textContent=fmt(total);$('surplus').textContent=fmt(Math.max(0,earned-total));
-}
-function fillInputs(){Object.keys(defaults).forEach(k=>$(k).value=data.goals[k])}
-function saveGroup(ids){ids.forEach(k=>data.goals[k]=Math.max(0,+$(k).value||0));save();render()}
-document.querySelectorAll('[data-tab]').forEach(b=>b.addEventListener('click',()=>{
- document.querySelectorAll('[data-tab]').forEach(x=>x.classList.toggle('active',x===b));
- ['overview','days','goals','expenses'].forEach(t=>$('tab-'+t).classList.toggle('hidden',t!==b.dataset.tab));
-}));
-$('saveGoals').onclick=()=>saveGroup(['dailyGoal','mission','makeup','fuel']);
-$('saveBills').onclick=()=>saveGroup(['debt','home']);
-drawDays();fillInputs();render();
-if('serviceWorker' in navigator && location.protocol.startsWith('http'))navigator.serviceWorker.register('./sw.js').catch(()=>{});
-</script>
-</body></html>
+const $=id=>document.getElementById(id), KEY='alvesFinanciadorV2';const today=new Date();const iso=d=>{const x=new Date(d);return new Date(x.getTime()-x.getTimezoneOffset()*60000).toISOString().slice(0,10)};const fmt=n=>(Number(n)||0).toLocaleString('pt-BR',{style:'currency',currency:'BRL'});const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));let data={moves:[],debts:[],goals:[]};try{const old=JSON.parse(localStorage.getItem(KEY));if(old&&typeof old==='object')data={...data,...old}}catch(e){}$('today').innerHTML=today.toLocaleDateString('pt-BR',{month:'long',year:'numeric'}).toUpperCase().replace(/^./,c=>c)+`<strong>${today.toLocaleDateString('pt-BR',{weekday:'short',day:'2-digit',month:'2-digit'})}</strong>`;$('moveDate').value=iso(today);
+function save(){localStorage.setItem(KEY,JSON.stringify(data));render()}function monthMoves(){const m=iso(today).slice(0,7);return data.moves.filter(x=>(x.date||'').slice(0,7)===m)}function totals(){const ms=monthMoves(),inc=ms.filter(x=>x.type==='income').reduce((s,x)=>s+x.amount,0),out=ms.filter(x=>x.type==='expense').reduce((s,x)=>s+x.amount,0),debt=data.debts.reduce((s,x)=>s+Math.max(0,x.amount-x.paid),0);return{inc,out,debt,balance:inc-out}}
+function moveHtml(x,del=true){return `<div class="item"><div class="item-main"><strong>${esc(x.desc)}</strong><small>${x.type==='income'?'Receita':'Despesa'} · ${new Date((x.date||iso(today))+'T12:00:00').toLocaleDateString('pt-BR')}</small></div><div class="item-amount ${x.type==='income'?'green':'red'}">${x.type==='income'?'+':'−'} ${fmt(x.amount)}</div>${del?`<button class="danger" data-del-move="${x.id}">Excluir</button>`:''}</div>`}
+function render(){const t=totals(),pct=t.inc>0?Math.min(100,t.out/t.inc*100):0;$('balance').textContent=fmt(t.balance);$('balance').className='balance '+(t.balance>=0?'':'red');$('incomeTotal').textContent=fmt(t.inc);$('expenseTotal').textContent=fmt(t.out);$('debtTotal').textContent=fmt(t.debt);$('goalCount').textContent=data.goals.length;$('budgetBar').style.width=pct+'%';$('budgetHint').textContent=`${fmt(t.out)} gastos de ${fmt(t.inc)} recebidos neste mês`;$('budgetPct').textContent=Math.round(pct)+'%';$('moveCount').textContent=data.moves.length+' registros';const recent=[...data.moves].sort((a,b)=>(b.date||'').localeCompare(a.date||'')).slice(0,5);$('recentMoves').innerHTML=recent.length?recent.map(x=>moveHtml(x,false)).join(''):'<div class="empty">Seus lançamentos recentes aparecerão aqui.</div>';$('allMoves').innerHTML=data.moves.length?[...data.moves].sort((a,b)=>(b.date||'').localeCompare(a.date||'')).map(x=>moveHtml(x)).join(''):'<div class="empty">Nenhum lançamento cadastrado.</div>';$('debtList').innerHTML=data.debts.length?data.debts.map(d=>{const left=Math.max(0,d.amount-d.paid),p=d.amount?Math.min(100,d.paid/d.amount*100):0;return `<div class="item" style="display:block"><div class="split"><div class="item-main"><strong>${esc(d.name)}</strong><small>Vencimento: ${d.due?new Date(d.due+'T12:00:00').toLocaleDateString('pt-BR'):'Não informado'} · Juros: ${Number(d.rate)||0}% a.m.</small></div><button class="danger" data-del-debt="${d.id}">Excluir</button></div><div class="split" style="margin-top:9px"><span class="mini">Pago: ${fmt(d.paid)} de ${fmt(d.amount)}</span><b class="gold">Falta ${fmt(left)}</b></div><div class="progress"><i style="width:${p}%"></i></div><div class="actions"><input style="width:115px;background:#071120;color:white;border:1px solid #28415f;border-radius:9px;padding:8px" type="number" min="0.01" step="0.01" placeholder="Valor pago" id="pay-${d.id}"><button class="secondary" data-pay-debt="${d.id}">Registrar pagamento</button></div></div>`}).join(''):'<div class="empty">Cadastre sua primeira dívida para acompanhar quanto falta quitar.</div>';$('goalList').innerHTML=data.goals.length?data.goals.map(g=>{const p=g.amount?Math.min(100,g.saved/g.amount*100):0;return `<div class="item" style="display:block"><div class="split"><div class="item-main"><strong>${esc(g.name)}</strong><small>${fmt(g.saved)} guardados de ${fmt(g.amount)}</small></div><button class="danger" data-del-goal="${g.id}">Excluir</button></div><div class="progress"><i style="width:${p}%"></i></div><div class="actions"><input style="width:115px;background:#071120;color:white;border:1px solid #28415f;border-radius:9px;padding:8px" type="number" min="0.01" step="0.01" placeholder="Adicionar R$" id="save-${g.id}"><button class="secondary" data-save-goal="${g.id}">Adicionar valor</button></div></div>`}).join(''):'<div class="empty">Crie uma meta para começar a acompanhar seu progresso.</div>'}
+function id(){return Date.now().toString(36)+Math.random().toString(36).slice(2,7)}
+$('addMove').onclick=()=>{const amount=Number($('moveAmount').value),desc=$('moveDesc').value.trim(),date=$('moveDate').value;if(!amount||amount<=0||!desc||!date){alert('Preencha descrição, valor e data corretamente.');return}data.moves.push({id:id(),type:$('moveType').value,amount,desc,date});$('moveAmount').value='';$('moveDesc').value='';save()};$('addDebt').onclick=()=>{const name=$('debtName').value.trim(),amount=Number($('debtAmount').value);if(!name||!amount||amount<=0){alert('Informe o nome e o valor total da dívida.');return}data.debts.push({id:id(),name,amount,paid:0,due:$('debtDue').value,rate:Number($('debtRate').value)||0});$('debtName').value='';$('debtAmount').value='';$('debtRate').value='';save()};$('addGoal').onclick=()=>{const name=$('goalName').value.trim(),amount=Number($('goalAmount').value);if(!name||!amount||amount<=0){alert('Informe o nome e o valor da meta.');return}data.goals.push({id:id(),name,amount,saved:0});$('goalName').value='';$('goalAmount').value='';save()};
+document.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;if(b.dataset.delMove){if(confirm('Excluir este lançamento?')){data.moves=data.moves.filter(x=>x.id!==b.dataset.delMove);save()}}if(b.dataset.delDebt){if(confirm('Excluir esta dívida?')){data.debts=data.debts.filter(x=>x.id!==b.dataset.delDebt);save()}}if(b.dataset.delGoal){if(confirm('Excluir esta meta?')){data.goals=data.goals.filter(x=>x.id!==b.dataset.delGoal);save()}}if(b.dataset.payDebt){const d=data.debts.find(x=>x.id===b.dataset.payDebt),v=Number($('pay-'+d.id).value);if(!v||v<=0){alert('Informe o valor do pagamento.');return}const paid=Math.min(v,d.amount-d.paid);if(paid<=0){alert('Essa dívida já está quitada.');return}d.paid+=paid;data.moves.push({id:id(),type:'expense',amount:paid,desc:'Pagamento de dívida: '+d.name,date:iso(today)});save()}if(b.dataset.saveGoal){const g=data.goals.find(x=>x.id===b.dataset.saveGoal),v=Number($('save-'+g.id).value);if(!v||v<=0){alert('Informe quanto deseja adicionar.');return}g.saved=Math.min(g.amount,g.saved+v);save()}});
+document.querySelectorAll('[data-tab]').forEach(b=>b.onclick=()=>{document.querySelectorAll('[data-tab]').forEach(x=>x.classList.toggle('active',x===b));['home','moves','debts','goals','backup'].forEach(t=>$('tab-'+t).classList.toggle('hidden',t!==b.dataset.tab))});$('exportBtn').onclick=()=>{const blob=new Blob([JSON.stringify({app:'ALVES FINANCIADOR',version:2,exportedAt:new Date().toISOString(),data},null,2)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='alves-financiador-backup-'+iso(today)+'.json';a.click();URL.revokeObjectURL(a.href)};$('importBtn').onclick=()=>$('importFile').click();$('importFile').onchange=async e=>{const f=e.target.files[0];if(!f)return;try{const obj=JSON.parse(await f.text()),d=obj.data||obj;if(!Array.isArray(d.moves)||!Array.isArray(d.debts)||!Array.isArray(d.goals))throw Error();if(confirm('Importar backup e substituir os dados atuais?')){data=d;save();alert('Backup restaurado com sucesso.')}}catch(err){alert('Não foi possível ler esse backup.')}e.target.value=''};render();
+</script></body></html>

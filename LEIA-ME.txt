@@ -1,18 +1,28 @@
-ALVES FINANCIADOR — PROJETO ANDROID
+ALVES FINANCIADOR — PROJETO ANDROID 2.0
 
-Este é um projeto Android nativo (Kotlin + WebView local), com ícone de inicialização baseado na logo fornecida e o painel financeiro embarcado no aplicativo. Depois de instalado, ele abre sem depender do Chrome ou de conexão com a internet.
+Projeto Android nativo (Kotlin + WebView local), com identidade visual e logo ALVES FINANCIADOR. O painel funciona offline e armazena os dados localmente no aparelho.
 
-IMPORTANTE: este pacote é o PROJETO-FONTE, não um APK compilado. O ambiente desta conversa não tem Android SDK/Gradle instalado para compilar e assinar o APK diretamente.
+RECURSOS DA VERSÃO 2.0
+- Painel com saldo do mês, receitas, despesas e dívidas em aberto.
+- Lançamento de receitas e despesas com descrição, valor e data.
+- Cadastro de dívidas, vencimento, taxa mensal informativa e registro de pagamentos.
+- Metas financeiras com acompanhamento do valor acumulado.
+- Exportação e restauração de backup JSON.
+- Interface responsiva para celular e tablet.
 
-Como gerar o APK automaticamente:
-1. Crie/entre em uma conta GitHub.
-2. Crie um repositório novo chamado AlvesFinanciador.
-3. Envie o conteúdo desta pasta para a raiz do repositório.
-4. Abra a aba Actions e execute "Build ALVES FINANCIADOR APK" (ou aguarde o workflow terminar).
-5. Abra a execução concluída e baixe o artefato "ALVES-FINANCIADOR-APK".
-6. Extraia o arquivo app-debug.apk e instale no Android. Se solicitado, permita instalar apps desta fonte.
+IMPORTANTE
+Este pacote contém o PROJETO-FONTE. Não foi possível compilar o APK neste ambiente porque Android SDK/Gradle não estão instalados aqui.
 
-O app usa armazenamento local do WebView. Não limpe os dados do aplicativo se quiser preservar os registros.
+GERAR O APK PELO GITHUB
+1. Envie o conteúdo desta pasta para a raiz do repositório GitHub.
+2. Abra a aba Actions.
+3. Execute o workflow "Build ALVES FINANCIADOR APK" ou faça push na branch main.
+4. Ao concluir, baixe o artefato "ALVES-FINANCIADOR-APK".
+5. Extraia app-debug.apk e instale no Android. Se solicitado, permita instalar apps desta fonte.
+
+ATENÇÃO AOS DADOS
+Os registros ficam salvos no armazenamento local do aplicativo. Use a área Backup para exportar uma cópia antes de trocar de celular ou reinstalar. Limpar os dados do app pode apagar os registros locais.
+
 Identificador Android: br.com.alvesfinanciador
 Nome: ALVES FINANCIADOR
-Versão: 1.0
+Versão: 2.0
